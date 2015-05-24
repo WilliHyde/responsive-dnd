@@ -1,0 +1,235 @@
+/* @WilliHyde */
+
+body {
+	padding-top: 70px;
+}
+h1, .h1, h2, .h2 {
+	font-family: 'Roboto Slab', serif;
+}
+h1 > small, 
+.h1 > small {
+	font-weight: 300;
+}
+.page-header {
+	margin-top: 20px;
+}
+p.nobel {
+	color: #b9b9b9;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.8rem;
+}
+.section-link {
+	display: block;
+	position: relative;
+	top: -70px;
+	visibility: hidden;
+}
+.highlight {
+	animation: highlight_up 1s ease-out;
+	-webkit-animation: highlight_up 1s ease-out;
+}
+@media (max-width: 767px) {
+	.page-header, 
+	.page-header > h1 {
+		margin-top: 0;
+	}
+}
+
+/* Navbar */
+.navbar-inverse .navbar-nav > li > a:focus, 
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #16b568;
+}
+.navbar-nav > li.in-danger > a:focus, 
+.navbar-nav > li.in-danger > a:hover {
+	color: #d9534f;
+}
+
+/* Forms */
+.form-control {
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+	border-bottom: 1px solid #d9d9d9;
+	background-color: transparent;
+	box-shadow: none;
+	border-radius: 0;
+	color: #16b568;
+}
+.form-control:hover {
+	border-bottom-color: rgba(25,206,119,0.8);
+	box-shadow: 0 1px 0 rgba(25,206,119,0.4);
+}
+.form-control:focus {
+	border-bottom-color: #19ce77;
+	box-shadow: 0 2px 0 #19ce77;
+}
+.form-control[type="number"] {
+	-moz-appearance: textfield;
+}
+::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+.input-xxl {
+  height: 50px;
+  padding: 10px 0;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+label, 
+p.like-label {
+	display: block;
+	color: #696969;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+textarea {
+	resize: vertical;
+}
+.form-control + label {
+	margin: 4px 0 0;
+}
+.input-group-addon {
+	padding: 0;
+	font-size: 1.2rem;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+}
+label.input-group-addon {
+	padding-left: 4px;
+}
+.input-group-addon > .checkbox {
+	margin-bottom: 0;
+}
+.input-group-addon > strong {
+	font-size: 1.8rem;
+	font-weight: 400;
+	color: #b1b1b1;
+}
+.form-group.no-margin {
+	margin-bottom: 0;
+}
+.form-compact > .form-group {
+	margin-bottom: 6px;
+}
+.insp-spacer { /* Special Case */
+	margin-top: 18px;
+	margin-bottom: 18px;
+}
+
+/* Wells */
+.well {
+	background-color: #f9f9f9;
+}
+.well-title {
+	margin: -9px -9px 5px;
+	padding: 9px;
+	font-size: 1.4rem;
+	color: #898989;
+	background-color: #e5e5e5;
+	border-bottom: 1px solid #e3e3e3;
+}
+.well > .form-group:last-child {
+	margin-bottom: 0;
+}
+
+/* Panel */
+.panel-dnd {
+	font-family: 'Roboto Slab', serif;
+}
+.panel-dnd > .panel-heading {
+	display: block;
+	padding: 4px 8px;
+	margin-bottom: 5px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+.panel-dnd > .panel-body, 
+.panel-dnd > .panel-footer {
+	padding: 0 6px 4px;
+}
+.panel-dnd .panel-body > .form-group:last-child, 
+.panel-dnd .panel-body > p:last-child {
+	margin-bottom: 0;
+}
+.panel-dnd:not(.no-center) input {
+	text-align: center;
+}
+
+/* Table */
+.table-dnd > thead > tr > th {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1rem;
+	font-weight: 400;
+}
+.table-dnd > thead > tr > th, 
+.table-dnd > tbody > tr > td {
+	padding: 0 0 0 10px;
+} 
+.table-dnd > tbody > tr > td {
+	border: none;
+}
+.table-dnd > thead > tr > th:first-child, 
+.table-dnd > tbody > tr > td:first-child {
+	padding-left: 0;
+}
+.table-dnd > thead > tr > th:nth-child(1), 
+.table-dnd > thead > tr > th:nth-child(3), 
+.table-dnd > tbody > tr > td:nth-child(1), 
+.table-dnd > tbody > tr > td:nth-child(3) {
+	width: 40%;
+}
+.table-dnd > tbody > tr > td:nth-child(2) {
+	width: 20%;
+}
+
+/* Buttons */
+.btn-green {
+	color: white;
+	background-color: #16b568;
+	border-color: #139c59;
+}
+.btn-green.active, 
+.btn-green.focus, 
+.btn-green:active, 
+.btn-green:focus, 
+.btn-green:hover, 
+.open > .dropdown-toggle.btn-green {
+	color: white;
+	background-color: #139c59;
+	border-color: #10824b;
+}
+
+/* Button Groups */
+.btn-group > .btn-default {
+	color: #898989;
+}
+.btn-group > .btn-default.active {
+	background-color: #efefef;
+}
+.btn-group.with-success > .btn.active {
+	color: #16b568;
+	background-color: rgba(22,181,104,0.15);
+}
+.btn-group.with-failure > .btn.active {
+	color: #d9534f;
+	background-color: rgba(217,83,79,0.15);
+}
+
+/* Animations */
+@keyframes highlight_up {
+	0% { box-shadow: none; }
+	50% { box-shadow: 0 0 0 4px rgba(22,181,104,0.6); }
+	100% { box-shadow: none; }
+}
+@-webkit-keyframes highlight_up {
+	0% { box-shadow: none; }
+	50% { box-shadow: 0 0 0 4px rgba(22,181,104,0.6); }
+	100% { box-shadow: none; }
+}

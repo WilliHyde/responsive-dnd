@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#16b568">
+		
+		<title>D&amp;D Character Sheet</title>
+		
+		<link href='//fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/toon.css" rel="stylesheet">
+		
+	</head>
+	<body>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dnd-navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+      			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span> D&amp;D</a>
+				</div>
+				<div class="collapse navbar-collapse" id="dnd-navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<span class="glyphicon glyphicon-book"></span> Select Section <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu" id="jump_menu">
+								<!-- id="_section" -->
+								<li><a href="#character_section">Character Information</a></li>
+								<li class="divider"></li>
+								<li><a href="#ip_section">Inspiration / Proficiency Bonus</a></li>
+								<li><a href="#str_section">Strength</a></li>
+								<li><a href="#dex_section">Dexterity</a></li>
+								<li><a href="#const_section">Constitution</a></li>
+								<li><a href="#int_section">Intelligence</a></li>
+								<li><a href="#wis_section">Wisdom</a></li>
+								<li><a href="#char_section">Charisma</a></li>
+								<li><a href="#pass_wis_section">Passive Wisdom</a></li>
+								<li class="divider"></li>
+								<li><a href="#ais_section">Armor Class / Initiative / Speed</a></li>
+								<li><a href="#hp_section">Hit Points</a></li>
+								<li><a href="#hdds_section">Hit Dice / Death Saves</a></li>
+								<li><a href="#aands_section">Attacks &amp; Spellcasting</a></li>
+								<li><a href="#char_notes_section">Equipment &amp; Character Notes</a></li>
+								<li><a href="#other_profs_section">Other Proficiencies &amp; Languages</a></li>
+								<li class="divider"></li>
+								<li><a href="#pt_section">Personality Traits</a></li>
+								<li><a href="#ideals_section">Ideals</a></li>
+								<li><a href="#bonds_section">Bonds</a></li>
+								<li><a href="#flaws_section">Flaws</a></li>
+								<li><a href="#ft_section">Features &amp; Traits</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-toggle="modal" data-target="#calcModal"><span class="glyphicon glyphicon-check"></span> Calculate Values</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-floppy-save"></span> Save</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-open"></span> Upload</a></li>
+						<li class="in-danger"><a href="#" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash"></span> Clear All</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container">
+			<div class="page-header">
+				<h1>Dungeons and Dragons <small>5<sup>th</sup> Edition Character Sheet</small></h1>
+			</div>
+			
+			<span class="section-link" id="character_section"></span>
+			<div class="well well-sm" data-highlight="#character_section">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="nobel">This is the story of...</p>
+						<div class="form-group">
+							<input type="text" class="form-control input-xxl" id="name" spellcheck="false">
+							<label for="name">Character Name</label>
+						</div>
+					</div>
+					<div class="col-md-6">
+						
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="class">
+									<label for="class">Class</label>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="number" min="0" class="form-control" id="level">
+									<label for="level">Level</label>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="background">
+									<label for="background">Background</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="race">
+									<label for="race">Race</label>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="text" class="form-control" id="alignment">
+									<label for="alignment">Alignment</label>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<input type="number" min="0" class="form-control" id="xp">
+									<label for="xp">Experence Points</label>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					
+					<span class="section-link" id="ip_section"></span>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="panel panel-default panel-dnd" data-highlight="#ip_section">
+								<div class="panel-heading">Inspiration</div>
+								<div class="panel-body">
+										<div class="btn-group btn-group-justified with-success" data-toggle="buttons">
+											<label class="btn btn-default">
+												<input type="checkbox" autocomplete="off" name="inspiration" value="Y">
+												<span class="glyphicon glyphicon-thumbs-up"></span> +1
+											</label>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="panel panel-default panel-dnd" data-highlight="#ip_section">
+								<label class="panel-heading" for="prof_bonus">Proficiency Bonus</label>
+								<div class="panel-body">
+									<div class="form-group">
+										<input type="number" class="form-control" id="prof_bonus">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Strength -->
+					<span class="section-link" id="str_section"></span>
+					<div class="well well-sm" data-highlight="#str_section">
+						<h2 class="well-title">Strength</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="str_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="str_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="str_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="str_saving">
+											<label for="str_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="athletics_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="athletics_stat">
+											<label for="athletics_stat" class="input-group-addon">Athletics</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Dexterity -->
+					<span class="section-link" id="dex_section"></span>
+					<div class="well well-sm" data-highlight="#dex_section">
+						<h2 class="well-title">Dexterity</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="dex_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="dex_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="dex_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="dex_saving">
+											<label for="dex_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="acrobatics_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="acrobatics_stat">
+											<label for="acrobatics_stat" class="input-group-addon">Acrobatics</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="soh_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="soh_stat">
+											<label for="soh_stat" class="input-group-addon">Slight of Hand</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="stealth_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="stealth_stat">
+											<label for="stealth_stat" class="input-group-addon">Stealth</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Constitution -->
+					<span class="section-link" id="const_section"></span>
+					<div class="well well-sm" data-highlight="#const_section">
+						<h2 class="well-title">Constitution</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="const_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="const_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="const_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="const_saving">
+											<label for="str_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Intelligence -->
+					<span class="section-link" id="int_section"></span>
+					<div class="well well-sm" data-highlight="#int_section">
+						<h2 class="well-title">Intelligence</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="int_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="int_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="int_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="int_saving">
+											<label for="int_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="arcana_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="arcana_stat">
+											<label for="arcana_stat" class="input-group-addon">Arcana</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="history_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="history_stat">
+											<label for="history_stat" class="input-group-addon">History</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="investigation_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="investigation_stat">
+											<label for="investigation_stat" class="input-group-addon">Investigation</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="nature_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="nature_stat">
+											<label for="nature_stat" class="input-group-addon">Nature</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="religion_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="religion_stat">
+											<label for="religion_stat" class="input-group-addon">Religion</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Wisdom -->
+					<span class="section-link" id="wis_section"></span>
+					<div class="well well-sm" data-highlight="#wis_section">
+						<h2 class="well-title">Wisdom</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="wis_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="wis_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="wis_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="wis_saving">
+											<label for="wis_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="animal_handling_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="animal_handling_stat">
+											<label for="animal_handling_stat" class="input-group-addon">Animal Handling</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="insight_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="insight_stat">
+											<label for="insight_stat" class="input-group-addon">Insight</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="medicine_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="medicine_stat">
+											<label for="medicine_stat" class="input-group-addon">Medicine</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="perception_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="perception_stat">
+											<label for="perception_stat" class="input-group-addon">Perception</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="survival_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="survival_stat">
+											<label for="survival_stat" class="input-group-addon">Survival</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Charisma -->
+					<span class="section-link" id="char_section"></span>
+					<div class="well well-sm" data-highlight="#char_section">
+						<h2 class="well-title">Charisma</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon"><strong>[</strong></div>
+											<input type="number" min="0" min="6" class="form-control text-center input-xs" id="char_prime">
+											<div class="input-group-addon"><strong>]</strong></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="number" min="-6" min="6" class="form-control text-center input-xxl" id="char_bonus">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-8">
+								<div class="form-compact">
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="char_saving_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="char_saving">
+											<label for="char_saving" class="input-group-addon">Saving Throws</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="deception_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="deception_stat">
+											<label for="deception_stat" class="input-group-addon">Deception</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="intimidation_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="intimidation_stat">
+											<label for="intimidation_stat" class="input-group-addon">Intimidation</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="performance_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="performance_stat">
+											<label for="performance_stat" class="input-group-addon">Performance</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<div class="input-group-addon">
+												<div class="checkbox"><label><input type="checkbox" name="persuasion_bonus" value="Y"></label></div>
+											</div>
+											<input type="number" min="-6" min="6" class="form-control input-sm" id="persuasion_stat">
+											<label for="persuasion_stat" class="input-group-addon">Persuasion</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<span class="section-link" id="pass_wis_section"></span>
+					<div class="well well-sm" data-highlight="#pass_wis_section">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="number" class="form-control" id="pass_wis">
+								<label for="pass_wis" class="input-group-addon">Passive Wisdom <small>(Perception)</small></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<span class="section-link" id="ais_section"></span>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="panel panel-default panel-dnd" data-highlight="#ais_section">
+								<label class="panel-heading" for="armor_class">Armor Class</label>
+								<div class="panel-body">
+									<div class="form-group">
+										<input type="number" class="form-control" id="armor_class">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="panel panel-default panel-dnd" data-highlight="#ais_section">
+								<label class="panel-heading" for="initiative">Initiative</label>
+								<div class="panel-body">
+									<div class="form-group">
+										<input type="number" class="form-control" id="initiative">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="panel panel-default panel-dnd" data-highlight="#ais_section">
+								<label class="panel-heading" for="speed">Speed</label>
+								<div class="panel-body">
+									<div class="form-group">
+										<input type="number" class="form-control" id="speed">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<span class="section-link" id="hp_section"></span>
+					<div class="well well-sm" data-highlight="#hp_section">
+						<h2 class="well-title">Hit Points</h2>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-group no-margin">
+									<input type="number" min="0" class="form-control text-center input-lg" id="max_hp">
+									<label class="text-center" for="max_hp">Maximum</label>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group no-margin">
+									<input type="number" min="0" class="form-control text-center input-lg" id="current_hp">
+									<label class="text-center" for="current_hp">Current</label>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group no-margin">
+									<input type="number" min="0" class="form-control text-center input-lg" id="temp_hp">
+									<label class="text-center" for="temp_hp">Temporary</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<span class="section-link" id="hdds_section"></span>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="panel panel-default panel-dnd no-center" data-highlight="#hdds_section">
+								<label class="panel-heading" for="hit_dice">Hit Dice</label>
+								<div class="panel-body">
+									<div class="form-group">
+										<input type="text" min="0" class="form-control" id="hit_dice_total">
+										<label for="hit_dice_total">Total</label>
+									</div>
+									<div class="form-group">
+										<input type="text" min="0" class="form-control" id="hit_dice">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="panel panel-default panel-dnd" data-highlight="#hdds_section">
+								<div class="panel-heading">Death Saves</div>
+								<div class="panel-body">
+									<div class="btn-group btn-group-sm btn-group-justified with-success" data-toggle="buttons">
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_save" value="1">
+											<span class="glyphicon glyphicon-thumbs-up"></span> 
+										</label>
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_save" value="2">
+											<span class="glyphicon glyphicon-thumbs-up"></span> 
+										</label>
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_save" value="3">
+											<span class="glyphicon glyphicon-thumbs-up"></span>  
+										</label>
+									</div>
+									<p class="like-label">Successes</p>
+									<div class="btn-group btn-group-sm btn-group-justified with-failure" data-toggle="buttons">
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_fail" value="1">
+											<span class="glyphicon glyphicon-thumbs-down"></span> 
+										</label>
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_fail" value="2">
+											<span class="glyphicon glyphicon-thumbs-down"></span> 
+										</label>
+										<label class="btn btn-default">
+											<input type="checkbox" autocomplete="off" name="death_fail" value="3">
+											<span class="glyphicon glyphicon-thumbs-down"></span>  
+										</label>
+									</div>
+									<p class="like-label">Failures</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<span class="section-link" id="aands_section"></span>
+					<div class="well well-sm" data-highlight="#aands_section">
+						<h2 class="well-title">Attacks &amp; Spellcasting</h2>
+						<table class="table table-dnd table-condensed">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Atk Bonus</th>
+									<th>Damage Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" class="form-control" id="attack_name_1"></td>
+									<td><input type="number" class="form-control" id="attck_bonus_1"></td>
+									<td><input type="text" class="form-control" id="attack_damage_1"></td>
+								</tr>
+								<tr>
+									<td><input type="text" class="form-control" id="attack_name_2"></td>
+									<td><input type="number" class="form-control" id="attck_bonus_2"></td>
+									<td><input type="text" class="form-control" id="attack_damage_2"></td>
+								</tr>
+								<tr>
+									<td><input type="text" class="form-control" id="attack_name_3"></td>
+									<td><input type="number" class="form-control" id="attck_bonus_3"></td>
+									<td><input type="text" class="form-control" id="attack_damage_3"></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="form-group">
+							<textarea class="form-control" id="attacks_spells_other" rows="10"></textarea>
+						</div>
+					</div>
+					
+					<span class="section-link" id="char_notes_section"></span>
+					<div class="well well-sm" data-highlight="#char_notes_section">
+						<h2 class="well-title">Equipment &amp; Character Notes</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="char_notes" rows="18"></textarea>
+						</div>
+					</div>
+					
+					<span class="section-link" id="other_profs_section"></span>
+					<div class="well well-sm" data-highlight="#other_profs_section">
+						<h2 class="well-title">Other Proficiencies &amp; Languages</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="other_profs" rows="6"></textarea>
+						</div>
+					</div>
+					
+				</div>
+				<div class="col-md-4">
+					<span class="section-link" id="pt_section"></span>
+					<div class="well well-sm" data-highlight="#pt_section">
+						<h2 class="well-title">Personality Traits</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="personality_traits" rows="5"></textarea>
+						</div>
+					</div>
+					<span class="section-link" id="ideals_section"></span>
+					<div class="well well-sm" data-highlight="#ideals_section">
+						<h2 class="well-title">Ideals</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="ideals" rows="4"></textarea>
+						</div>
+					</div>
+					<span class="section-link" id="bonds_section"></span>
+					<div class="well well-sm" data-highlight="#bonds_section">
+						<h2 class="well-title">Bonds</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="bonds" rows="4"></textarea>
+						</div>
+					</div>
+					<span class="section-link" id="flaws_section"></span>
+					<div class="well well-sm" data-highlight="#flaws_section">
+						<h2 class="well-title">Flaws</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="flaws" rows="4"></textarea>
+						</div>
+					</div>
+					<span class="section-link" id="ft_section"></span>
+					<div class="well well-sm" data-highlight="#ft_section">
+						<h2 class="well-title">Features &amp; Traits</h2>
+						<div class="form-group">
+							<textarea class="form-control" id="features_traits" rows="30"></textarea>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title text-danger" id="deleteModalLabel">Warning!</h4>
+					</div>
+					<div class="modal-body">
+						<span class="text-danger">If you have not saved, all data will be lost. <strong>THIS CANNOT BE UNDONE.</strong> Please make sure this is what you intend to do.</span>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Clear All</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="calcModal" tabindex="-1" role="dialog" aria-labelledby="calcModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="calcModalLabel">Caution!</h4>
+					</div>
+					<div class="modal-body">
+						This could overwrite any custom data you may have set. Please make sure this is what you intend to do.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-green calc_btn" data-dismiss="modal">Calculate</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
+		<script src="js/toon.js"></script>
+		
+	</body>
+</html>
