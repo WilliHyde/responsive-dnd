@@ -13,12 +13,20 @@ This is a responsively designed character sheet designed for Dungeons & Dragons 
 * Cloud loading of JSON data file.
 * Spell Sheet and Additional Character Information Sheet.
 
-###Change Log
+##Change Log
 (Will live here for now)
+
+**May 26, 2015, Part 2**
+* Added the "Clear All" functionality.
+* Added a cool dragon icon.
+* Tweeked some of the colors.
+* Made character section look better on phones.
+* Added dynamic titles.
+* Changed section highlight functionality.
+* Added a "Coming Soon!" modal.
 
 **May 26, 2015**
 * Calculation is now functioning.
 * Cleaned up some of the JS.
 * Removed Bootstrap wells and panels for custom CSS.
 * Moved Passive Wisdom location to the top.
-

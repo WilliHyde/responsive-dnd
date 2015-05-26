@@ -25,7 +25,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-      			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span> D&amp;D</a>
+      			<a class="navbar-brand dragon" href="#"><img src="img/dragon.svg"><span class="sr-only">Rawr a dragon!</span></a>
 				</div>
 				<div class="collapse navbar-collapse" id="dnd-navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -61,23 +61,24 @@
 							</ul>
 						</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right nav-toggle">
 						<li><a href="#" data-toggle="modal" data-target="#calcModal"><span class="glyphicon glyphicon-check"></span> Calculate Values</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-floppy-save"></span> Save</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-open"></span> Upload</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#soonModal"><span class="glyphicon glyphicon-floppy-save"></span> Save</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#soonModal"><span class="glyphicon glyphicon-open"></span> Upload</a></li>
 						<li class="in-danger"><a href="#" data-toggle="modal" data-target="#deleteModal"><span class="glyphicon glyphicon-trash"></span> Clear All</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 		
-		<div class="container">
+		<form class="container" id="main-form">
 			<div class="page-header">
 				<h1>Dungeons and Dragons <small>5<sup>th</sup> Edition Character Sheet</small></h1>
 			</div>
 			
 			<span class="section-link" id="character_section"></span>
 			<section data-highlight="#character_section">
+				<header>Character Information</header>
 				<div class="row">
 					<div class="col-md-6">
 						<p class="nobel">This is the story of...</p>
@@ -89,39 +90,37 @@
 					<div class="col-md-6">
 						
 						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="text" class="form-control" id="class">
 									<label for="class">Class</label>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="number" min="0" class="form-control" id="level">
 									<label for="level">Level</label>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="text" class="form-control" id="background">
 									<label for="background">Background</label>
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="text" class="form-control" id="race">
 									<label for="race">Race</label>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="text" class="form-control" id="alignment">
 									<label for="alignment">Alignment</label>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4 col-xs-6">
 								<div class="form-group">
 									<input type="number" min="0" class="form-control" id="xp">
 									<label for="xp">Experence Points</label>
@@ -790,7 +789,7 @@
 				
 			</div>
 			
-		</div>
+		</form>
 		
 		<!-- Modal -->
 		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -805,7 +804,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-danger" data-dismiss="modal">Clear All</button>
+						<button type="button" class="btn btn-danger clear_btn" data-dismiss="modal">Clear All</button>
 					</div>
 				</div>
 			</div>
@@ -824,6 +823,23 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-green calc_btn" data-dismiss="modal">Calculate</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="soonModal" tabindex="-1" role="dialog" aria-labelledby="soonModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title" id="soonModalLabel">Coming soon!</h4>
+					</div>
+					<div class="modal-body">
+						This feature has not been implemented yet. This project is a work in progress so check back soon!
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cool Beans <span class="glyphicon glyphicon-sunglasses"></span></button>
 					</div>
 				</div>
 			</div>
