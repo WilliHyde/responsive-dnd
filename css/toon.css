@@ -2,6 +2,7 @@
 
 body {
 	padding-top: 70px;
+	background-color: #f4f4f4;
 }
 h1, .h1, h2, .h2 {
 	font-family: 'Roboto Slab', serif;
@@ -123,42 +124,53 @@ label.input-group-addon {
 	margin-bottom: 18px;
 }
 
-/* Wells */
-.well {
-	background-color: #f9f9f9;
+/* Sections */
+section:before, 
+section:after {
+	display: table;
+	content: "";
 }
-.well-title {
-	margin: -9px -9px 5px;
-	padding: 9px;
+section:after {
+	clear: both;
+}
+section {
+	min-height: 20px;
+	margin-bottom: 20px;
+	padding: 8px 12px;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.17);
+}
+section > header, 
+section > .header {
+	margin: -8px -12px 5px;
+	padding: 8px 12px;
+	max-width: none;
 	font-size: 1.4rem;
-	color: #898989;
-	background-color: #e5e5e5;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	color: #f4f4f4;
+	background-color: #545454;
 	border-bottom: 1px solid #e3e3e3;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
-.well > .form-group:last-child {
+section > .form-group:last-child, 
+section > p:last-child {
 	margin-bottom: 0;
 }
-
-/* Panel */
-.panel-dnd {
-	font-family: 'Roboto Slab', serif;
+section.sm {
+	padding: 4px 6px;
 }
-.panel-dnd > .panel-heading {
-	display: block;
-	padding: 4px 8px;
-	margin-bottom: 5px;
+section.sm > header, 
+section.sm > .header {
+	margin: -4px -6px 5px;
+	padding: 4px 6px;
 	font-size: 1rem;
+	font-weight: 400;
 	line-height: 1.5;
 }
-.panel-dnd > .panel-body, 
-.panel-dnd > .panel-footer {
-	padding: 0 6px 4px;
-}
-.panel-dnd .panel-body > .form-group:last-child, 
-.panel-dnd .panel-body > p:last-child {
-	margin-bottom: 0;
-}
-.panel-dnd:not(.no-center) input {
+section.center input {
 	text-align: center;
 }
 

@@ -1,9 +1,10 @@
 var current_link,
-	 prime_stat,
-	 bonus_stat,
-	 save_throw,
-	 saving_bonus,
-	 stats = ['str', 'dex', 'const', 'int', 'wis', 'char'];
+	prime_stat,
+	bonus_stat,
+	save_throw,
+	saving_bonus,
+	target_check,
+	stats = ['str', 'dex', 'const', 'int', 'wis', 'char'];
 
 $(function() {
 	console.log('App activated');
@@ -40,17 +41,20 @@ function calc_values(arry){
 		save_throw = '#'+v+'_saving';
 		saving_bonus = 'input[name="'+v+'_saving_bonus"]';
 		
-		if( $(prime_stat).val() >= 1 && $(prime_stat).val() <= 25 ){
+		if( !$('#prof_bonus').val() )
+			$('#prof_bonus').val(0);
+		
+		if( $(prime_stat).val() >= 1 && $(prime_stat).val() <= 25 )
 			$(bonus_stat).val( Math.floor(($(prime_stat).val() - 10) / 2) );
-		}
 		
 		if( $(bonus_stat).val() ){
-			if( $(saving_bonus).is(':checked') ){
-			console.log('meh');
-				$(save_throw).val(parseInt($(bonus_stat).val()) + parseInt($('#prof_bonus').val()));
-			} else {
-				$(save_throw).val($(bonus_stat).val());
-			}
+			$('[data-calc="'+v+'"]').each(function(){
+				if( $('[data-target="'+$(this).attr('id')+'"]').is(':checked') ){
+					$(this).val(parseInt($(bonus_stat).val()) + parseInt($('#prof_bonus').val()));
+				} else {
+					$(this).val($(bonus_stat).val());
+				}
+			});
 		}
 	});
 }
