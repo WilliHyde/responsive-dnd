@@ -34,11 +34,11 @@ p.nobel {
 
 /* Navbar */
 .navbar-brand.dragon {
-	padding-bottom: 0;
+	padding-bottom: 5px;
 	padding-top: 10px;
 }
 .navbar-brand.dragon > img {
-	max-height: 40px;
+	max-height: 35px;
 	transition: transform 300ms;
 	-ms-transition: -ms-transform 300ms;
 	-webkit-transition: -webkit-transform 300ms;
