@@ -1,9 +1,6 @@
 var current_link,
 	prime_stat,
 	bonus_stat,
-	save_throw,
-	saving_bonus,
-	target_check,
 	stats = ['str', 'dex', 'const', 'int', 'wis', 'char'];
 
 $(function() {
@@ -18,7 +15,7 @@ $(function() {
 			$(this).addClass('highlight').one('webkitAnimationEnd msAnimationEnd animationend', function(e) {
 				$(this).removeClass('highlight');
 			});
-		})
+		});
 		
 		//Closes the menu if anchor is clicked
 		close_navbar();
@@ -45,14 +42,12 @@ $(function() {
 		if( $(this).val() )
 			document.title = $(this).val() + ' - D&D Character Sheet';
 	});
-	
 });
 
 //Closes the navbar
 function close_navbar() {
-	if ($(window).width() < 768) {
+	if ($(window).width() < 768)
 		$('button.navbar-toggle').trigger('click');
-	}	
 }
 
 //Calculation Function
@@ -60,13 +55,11 @@ function calc_values(arry){
 	$.each(arry, function(i, v){
 		prime_stat = '#'+v+'_prime';
 		bonus_stat = '#'+v+'_bonus';
-		save_throw = '#'+v+'_saving';
-		saving_bonus = 'input[name="'+v+'_saving_bonus"]';
 		
 		if( !$('#prof_bonus').val() )
 			$('#prof_bonus').val(0);
 		
-		if( $(prime_stat).val() >= 1 && $(prime_stat).val() <= 25 )
+		if( $(prime_stat).val() >= 1 && $(prime_stat).val() <= 24 )
 			$(bonus_stat).val( Math.floor(($(prime_stat).val() - 10) / 2) );
 		
 		if( $(bonus_stat).val() ){

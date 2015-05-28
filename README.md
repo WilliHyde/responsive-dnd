@@ -16,6 +16,10 @@ This is a responsively designed character sheet designed for Dungeons & Dragons 
 ##Change Log
 (Will live here for now)
 
+**May 27, 2015**
+* Removed dragon icon animation.
+* Cleaned up the Javascript.
+
 **May 26, 2015, Part 2**
 * Added the "Clear All" functionality.
 * Added a cool dragon icon.
