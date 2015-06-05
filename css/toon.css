@@ -78,10 +78,10 @@ p.nobel {
 	-webkit-appearance: none;
 }
 .input-xxl {
-  height: 50px;
-  padding: 10px 0;
-  font-size: 2rem;
-  line-height: 1.5;
+	height: 50px;
+	padding: 10px 0;
+	font-size: 2rem;
+	line-height: 1.5;
 }
 label, 
 p.like-label {
