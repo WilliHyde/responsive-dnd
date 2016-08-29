@@ -1,0 +1,30 @@
+{
+  "name": "responsive-dnd",
+  "version": "0.0.1",
+  "description": "Responsive DnD interface for the web.",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliHyde/responsive-dnd.git"
+  },
+  "keywords": [
+    "DnD",
+    "Responsive",
+    "SASS"
+  ],
+  "author": "William Hyde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilliHyde/responsive-dnd/issues"
+  },
+  "homepage": "https://github.com/WilliHyde/responsive-dnd#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglifycss": "^1.0.6"
+  }
+}
