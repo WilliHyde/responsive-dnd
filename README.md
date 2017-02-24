@@ -3,6 +3,27 @@
 
 This is a responsively designed character sheet designed for Dungeons & Dragons 5th Edition. It is designed to be as simple and unintrusive as possible; a true paper replacement. The biggest challenge for this project is that I've only really played D&D twice. My knowledge of the mechanics is a tad limited. To that end, my friend Danny Martin deserves a producer credit for his constant help with this project. If you have any suggestions or ideas, please let me know! -[@WilliHyde](https://twitter.com/WilliHyde)
 
+
+#How to run locally
+
+* Clone this repo
+
+* This is a node app. Before you can run responsive-dnd on your computer you must first download node, please see https://nodejs.org for downloading instruction.
+
+* Once you have gotten node up and running, navigate to the correct directory
+
+* Install all of the node dependencies by running `npm install`  (grab a tasty beverage this will take a couple minutes)
+
+* Install gulp `npm install gulp-cli -g`
+
+* Install http-server if you do not already have have it `npm install -g http-server`
+
+* Start the server `http-server`
+
+* The site will be running at http://localhost:8080/
+
+
+
 **To do list:**
 * Convert most of the sections into templates with Handelbars.js
 * Convert the CSS over to SCSS.
